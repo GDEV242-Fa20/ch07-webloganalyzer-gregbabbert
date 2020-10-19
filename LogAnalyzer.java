@@ -72,4 +72,24 @@ public class LogAnalyzer
         }
      return total;
     }
+    
+    /**
+     * This method prints out a method that shows the busiest hour
+     */
+    public void busiestHour()
+    {
+        int busiest = 0;
+        int busiestHour = 0;
+        for (int index = 0; index < hourCounts.length; ++index) {
+              if (hourCounts[index] > busiest) {
+                  busiest = hourCounts[index];
+                  busiestHour = index + 1;
+              }
+        }
+        System.out.println("The busiest is hour: " + busiest);
+    }
+    
+    
+    
+    
 }
