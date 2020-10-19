@@ -83,10 +83,26 @@ public class LogAnalyzer
         for (int index = 0; index < hourCounts.length; ++index) {
               if (hourCounts[index] > busiest) {
                   busiest = hourCounts[index];
-                  busiestHour = index + 1;
+                  busiestHour = index;
               }
         }
-        System.out.println("The busiest is hour: " + busiest);
+        System.out.println("The busiest is hour: " + busiestHour);
+    }
+    
+    /**
+     * This method prints out a method that shows the quietest hour
+     */
+    public void quietestHour()
+    {
+        int quietest = hourCounts[0];
+        int quietestHour = 0;
+        for (int index = 0; index < hourCounts.length; ++index) {
+              if (hourCounts[index] < quietest) {
+                  quietest = hourCounts[index];
+                  quietestHour = index;
+              }
+        }
+        System.out.println("The quietest is hour: " + quietestHour);
     }
     
     
