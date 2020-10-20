@@ -74,7 +74,7 @@ public class LogAnalyzer
     }
     
     /**
-     * This method prints out a method that shows the busiest hour
+     * This method prints out a message that tells the busiest hour
      */
     public void busiestHour()
     {
@@ -90,7 +90,7 @@ public class LogAnalyzer
     }
     
     /**
-     * This method prints out a method that shows the quietest hour
+     * This method prints out a message that tells the quietest hour
      */
     public void quietestHour()
     {
@@ -103,6 +103,24 @@ public class LogAnalyzer
               }
         }
         System.out.println("The quietest is hour: " + quietestHour);
+    }
+    
+    /**
+     * This method prints out a message that tells what two hours are busiest
+     */
+    public void busiestTwoHour()
+    {
+        int busiest = 0;
+        int busiestHour1 = 0;
+        int busiestHour2 = 0;
+        for (int index = 0; index < hourCounts.length - 1; ++index) {
+              if ((hourCounts[index] + hourCounts[index + 1]) > busiest) {
+                  busiest = (hourCounts[index] + hourCounts[index + 1]);
+                  busiestHour1 = index;
+                  busiestHour2 = index + 1;
+              }
+        }
+        System.out.println("The section of two hours is: " + busiestHour1 + " to " + busiestHour2);
     }
     
     
